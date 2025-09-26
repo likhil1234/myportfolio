@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Logo Link with Countdown Transition</title>
+  <style>
+   
+
+    .logo-link img {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+      cursor: pointer;
+      z-index: 2;
+    }
+
+    #animationContainer {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: black;
+      z-index: 9999;
+    }
+
+    #animVideo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+    <div style="text-align: center;">
+    <p style="color: white; font-size: 18px; margin-bottom: 10px;">Edits ?</p>
+  <!-- Logo link -->
+  <a id="logoAnchor" class="logo-link" href="#">
+    
+    <img src="https://ik.imagekit.io/usr1sai/cat.jpeg?updatedAt=1758783122391" alt="Logo">
+  </a>
+</div>
+
+  <!-- Fullscreen animation container -->
+  <div id="animationContainer">
+    <video id="animVideo" autoplay muted playsinline>
+      <source src="https://ik.imagekit.io/usr1sai/count?updatedAt=1758785630710" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+  <script>
+    const logoAnchor = document.getElementById("logoAnchor");
+    const animationContainer = document.getElementById("animationContainer");
+    const animVideo = document.getElementById("animVideo");
+
+    logoAnchor.addEventListener("click", (e) => {
+      e.preventDefault();
+
+      // Allow target page to open
+      sessionStorage.setItem("allowed_from_logo", Date.now().toString());
+
+      // Hide logo, show animation
+      logoAnchor.style.display = "none";
+      animationContainer.style.display = "block";
+
+      // Redirect after video ends
+      animVideo.onended = () => {
+        window.location.href = "edits.html"; // Replace with your actual target
+      };
+    });
+  </script>
+</body>
+</html>

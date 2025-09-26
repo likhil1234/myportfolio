@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Unveiling Me</title>
+  <!-- <link rel="stylesheet" href="./css/animation-classes.css" /> -->
+  <link rel="icon" type="image/x-icon" href="./assets/icons/t.png" />
+  <script src="./js/animation.js" defer></script>
+  <script src="./js/color-mode.js" defer></script>
+  <script src="./js/project-slideshow.js" defer></script>
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./css/animation.css" />
+  <link rel="stylesheet" href="./css/color-mode.css" />
+  <style>
+    .logo-link img {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+      cursor: pointer;
+      z-index: 2;
+    }
+
+    #animationContainer {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: black;
+      z-index: 9999;
+    }
+
+    #animVideo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M9TJG85XNM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-M9TJG85XNM');
+</script>
+
+<body>
+  <div id="loader-overlay">
+    <div class="loader"></div>
+  </div>
+
+  <div id="hero">
+    <h5 style="position: absolute; top: -105px; left: 50%; transform: translateX(-50%);">Hello, You!</h5>
+
+<h1 style="position: absolute; top: -90px; left:50% ; transform: translateX(-50%); white-space: nowrap;">
+    I'm Likhil Venkata Naga Sri Sai Vimal Tadinada
+</h1>
+
+<p style="position: absolute; top: -40px; left: 50%; transform: translateX(-50%); white-space: nowrap;">
+    An Enthusiastic Learner, Trying to do better
+</p>
+    
+    
+
+   
+
+    <div id="hero__animation">
+      <div id="hero__animation__img"></div>
+    </div>
+  </div>
+
+
+  <nav id="grid">
+    <div id="grid__tl">
+      <div id="grid__tl__btn">About</div>
+      <div id="grid__tl__content">
+        <div class="cards">
+
+
+          <div class="cards__content">
+            <article>
+              <img src="./assets/icons/th.jpeg" alt="Education icon" class="icon" />
+              <h2>Resume</h2>
+              <a href="https://ik.imagekit.io/usr1sai/Resume%20updated.pdf?updatedAt=1758890966779" download="Likhil_resume.pdf">
+                <p class="dwn">Download</p>
+              </a>
+            </article>
+          </div>
+
+         <!-- Certificates Section -->
+<div class="cards__content">
+  <article>
+      <img src="./assets/icons/experience.png" alt="Certificates Icon" class="icon" />
+      <h2>Certificates</h2>
+      <p class="show-btn" onclick="showCertificates()" style="font-family: system-ui, sans-serif;">
+          Show Certificates
+      </p>
+  </article>
+</div>
+
+<!-- Certificates Modal -->
+<div id="certificates" class="certificates-container">
+  <h2>My Certificates</h2>
+
+  <!-- Filter Buttons -->
+  <div class="certificate-filters">
+      <button onclick="filterCertificates('all')">All</button>
+      <button onclick="filterCertificates('course-completion')">Course Completion</button>
+      <button onclick="filterCertificates('participant')">Competitions</button>
+      <button onclick="filterCertificates('nptel')">NPTEL</button>
+  </div>
+
+  <!-- Certificates Grid -->
+  <div class="certificates-grid">
+      <div class="certificate course-completion">
+        <h3 style="color: #333; font-family: Arial, sans-serif; font-size: 24px; font-weight: 600; margin-bottom: 15px; padding-bottom: 5px; border-bottom: 2px solid #00695c;">MongoDB</h3>
+      
+          <img src="./assets/certificates/mongoDB-img.png" 
+               alt="MongoDB Course Completion Certificate" 
+               class="certificate-img" onclick="openModal(this.src)">
+               <p style="
+               font-size: 18px; 
+               font-weight: 600; 
+               color: #222; 
+               background: linear-gradient(to right, #f8f9fa, #66a4ae); 
+               padding: 8px 14px; 
+               border-left: 5px solid #0056b3; 
+               border-radius: 6px;
+               display: inline-block;
+               box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+               margin: 6px 0;
+             ">
+             <strong>Issuer:</strong> GeeksforGeeks
+           </p>
+      </div>
+      <div class="certificate course-completion">
+        <h3 style="color: #333; font-family: Arial, sans-serif; font-size: 24px; font-weight: 600; margin-bottom: 15px; padding-bottom: 5px; border-bottom: 2px solid #14e4e4;">CS50 Python</h3>
+        <img src="./assets/certificates/harvadx python.png" 
+             alt="CS50P Course Completion Certificate" 
+             class="certificate-img" onclick="openModal(this.src)">
+             <p style="
+             font-size: 18px; 
+             font-weight: 600; 
+             color: #222; 
+             background: linear-gradient(to right, #f8f9fa, #66a4ae); 
+             padding: 8px 14px; 
+             border-left: 5px solid #0056b3; 
+             border-radius: 6px;
+             display: inline-block;
+             box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+             margin: 6px 0;
+           ">
+           <strong>Issuer:</strong> HarvardX
+         </p>
+    </div>
+      <div class="certificate course-completion">
+        <h3 style="color: #333; font-family: Arial, sans-serif; font-size: 24px; font-weight: 600; margin-bottom: 15px; padding-bottom: 5px; border-bottom: 2px solid #08c0d8;">Cisco C </h3>
+        <img src="./assets/certificates/C-cisco.png" 
+             alt="Cisco C language Course Completion Certificate" 
+             class="certificate-img" onclick="openModal(this.src)">
+             <p style="
+             font-size: 18px; 
+             font-weight: 600; 
+             color: #222; 
+             background: linear-gradient(to right, #f8f9fa, #66a4ae); 
+             padding: 8px 14px; 
+             border-left: 5px solid #0056b3; 
+             border-radius: 6px;
+             display: inline-block;
+             box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+             margin: 6px 0;
+           ">
+           <strong>Issuer:</strong> Cisco
+         </p>
+    </div>
+      <div class="certificate nptel">
+        <h3 style="color: #333; font-family: Arial, sans-serif; font-size: 24px; font-weight: 600; margin-bottom: 15px; padding-bottom: 5px; border-bottom: 2px solid #d17015;">Introduction to IOT</h3>
+        <img src="./assets/certificates/iot nptel.png" 
+             alt="IOT NPTEL certificate" 
+             class="certificate-img" onclick="openModal(this.src)"> 
+             <p style="
+             font-size: 18px; 
+             font-weight: 600; 
+             color: #222; 
+             background: linear-gradient(to right, #f8f9fa, #66a4ae); 
+             padding: 8px 14px; 
+             border-left: 5px solid #0056b3; 
+             border-radius: 6px;
+             display: inline-block;
+             box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+             margin: 6px 0;
+           ">
+           <strong>Issuer:</strong> NPTEL
+         </p>
+    </div> 
+      <div class="certificate participant">
+          <h3 style="color: #333; font-family: Arial, sans-serif; font-size: 24px; font-weight: 600; margin-bottom: 15px; padding-bottom: 5px; border-bottom: 2px solid #dccb12;">CodePulse Event</h3>
+          <img src="./assets/certificates/vitpart img.png" 
+               alt="CodePulse participation Certificate" 
+               class="certificate-img" onclick="openModal(this.src)">
+              
+               <p style="
+               font-size: 18px; 
+               font-weight: 600; 
+               color: #222; 
+               background: linear-gradient(to right, #f8f9fa, #66a4ae); 
+               padding: 8px 14px; 
+               border-left: 5px solid #0056b3; 
+               border-radius: 6px;
+               display: inline-block;
+               box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+               margin: 6px 0;
+             ">
+             <strong>Issuer:</strong> VIT Chennai
+           </p>
+           
+             
+      </div>
+     
+
+
+  </div>
+
+
+
+
+
+  <!-- Close Button -->
+  <button class="close-btn" onclick="hideCertificates()">Close</button>
+</div>
+<!-- Image Modal -->
+<!-- Ensure the modal is outside any container -->
+<div id="imageModal" class="modal">
+  <span class="close" onclick="closeModal()">&times;</span>
+  <img id="modalImage" class="modal-content">
+</div>
+
+
+        
+          <div class="cards__content">
+            <article>
+              <img src="./assets/icons/education.png" alt="Education icon" class="icon" />
+              <h2>Education</h2>
+              <p>B.Tech. IT</p>
+              <p>9.1 CGPA</p>
+            </article>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+    <div id="grid__tr">
+      <div id="grid__tr__btn">My Skill Set</div>
+      <div id="grid__tr__content">
+        <div class="cards experience">
+
+
+
+          <article class="experience__skill">
+            <h2>Programming</h2>
+
+            <div>
+              <img src="./assets/icons/checkmark.png" alt="Checkmark icon" class="icon" />
+              <div>
+                <h2>Python</h2>
+                <p>Intermediate</p>
+              </div>
+            </div>
+            <div>
+              <img src="./assets/icons/checkmark.png" alt="Checkmark icon" class="icon" />
+              <div>
+                <h2>C</h2>
+                <p>Intermediate</p>
+              </div>
+            </div>
+            </article>
+
+
+          <article class="experience__skill">
+            <h2>Frontend Development</h2>
+   
+           
+            <div>
+              <img src="./assets/icons/checkmark.png" alt="Checkmark icon" class="icon" />
+              <div>
+                <h2>HTML - CSS</h2>
+                <p>Intermediate</p>
+              </div>
+            </div>
+            <div>
+              <img src="./assets/icons/checkmark.png" alt="Checkmark icon" class="icon" />
+              <div>
+                <h2>Javascript</h2>
+                <p>Intermediate</p>
+              </div> 
+            </div>
+            <div>
+              <img src="./assets/icons/checkmark.png" alt="Checkmark icon" class="icon" />
+              <div>
+                <h2>Figma</h2>
+                <p>Intermediate</p>
+              </div>
+            </div>
+
+
+          </article>
+          <article class="experience__skill">
+            <h2>Backend Development</h2>
+
+            
+
+            <div>
+              <img src="./assets/icons/checkmark.png" alt="Checkmark icon" class="icon" />
+              <div>
+                <h2>NodeJS</h2>
+                <p>Intermediate</p>
+              </div>
+            </div>
+            <div>
+              <img src="./assets/icons/checkmark.png" alt="Checkmark icon" class="icon" />
+              <div>
+                <h2>PHP</h2>
+                <p>Intermediate</p>
+              </div>
+            </div>
+
+            
+
+          </article>
+          <article class="experience__skill">
+            <h2>Databases</h2>
+
+            
+
+            <div>
+              <img src="./assets/icons/checkmark.png" alt="Checkmark icon" class="icon" />
+              <div>
+                <h2>MongoDB</h2>
+                <p>Intermediate</p>
+              </div>
+            </div>
+            <div>
+              <img src="./assets/icons/checkmark.png" alt="Checkmark icon" class="icon" />
+              <div>
+                <h2>MySQL</h2>
+                <p>Intermediate</p>
+              </div>
+            </div>
+
+            
+
+            
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div id="grid__bl">
+      <div id="grid__bl__btn">Projects</div>
+      <div id="grid__bl__content">
+        <div id="grid__bl__content__projects">
+
+
+          
+          <div class="project p-1">
+            <img class="project__img project-1" src="assets/portfolio-projects/finance.png" alt="Project 1" />
+            <h2 class="project__title">Finance Tracker</h2>
+            <a href="https://finatrack.netlify.app/" target="_blank" class="btn">Demo</a>
+            <a href="https://github.com/yourusername/finance-tracker" target="_blank" class="btn">GitHub</a>
+          </div>
+
+
+          <div class="project p-2">
+            <img class="project__img project-2" src="assets/portfolio-projects/cybertechy.png" alt="Project 2" />
+            <h2 class="project__title">Cybercrime Awareness</h2>
+            <a href="https://cybertechy.ct.ws/" target="_blank" class="btn">Demo</a>
+            <a href="https://github.com/yourusername/finance-tracker" target="_blank" class="btn">GitHub</a>
+          </div>
+           
+
+          <div class="project p-3">
+            <img class="project__img project-3" src="assets/portfolio-projects/gemmine.png" alt="Project 3" />
+            <h2 class="project__title">Gem-mine game</h2>
+            <a href="https://likhil1234.itch.io/gemmine" target="_blank" class="btn">Demo</a>
+            <a href="" target="_blank" class="btn">GitHub</a>
+          </div>
+
+          
+
+          <button class="arrow" onclick="navigateProject(-1)">
+            &#10094;
+          </button>
+          <button class="arrow" onclick="navigateProject(1)">&#10095;</button>
+        
+        </div>
+      </div>
+    </div>
+
+    <!-- Integrated component from index2.html, positioned at middle right -->
+    <div style="position: fixed; top: 50%; right: 10px; transform: translateY(-50%); z-index: 10; text-align: center;">
+      <p style="color:#333333; font-size: 24px; margin-bottom: 10px; font: Poppins;">Edits ?</p>
+      <!-- Logo link -->
+      <a id="logoAnchor" class="logo-link" href="#">
+        <img src="https://ik.imagekit.io/usr1sai/cat.jpeg?updatedAt=1758783122391" alt="Logo" >
+      </a>
+    </div>
+
+    <!-- Fullscreen animation container -->
+    <div id="animationContainer">
+      <video id="animVideo" autoplay muted playsinline>
+        <source src="https://ik.imagekit.io/usr1sai/count?updatedAt=1758785630710" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+    
+    <div id="grid__br">
+      <div id="grid__br__btn">Contact</div>
+      <div id="grid__br__content">
+        <h4 class="contact-text">Get In Touch</h4>
+        <div>
+
+        
+          <button style="border: 4px solid rgb(234, 61, 61); padding: 0px 20px;" class="btn btn-contact" onclick="window.location.href='mailto:likhilpnl123@gmail.com'">
+            Email
+        </button>
+        
+
+        
+
+    <button 
+    style="border: 4px solid rgb(236, 214, 235);" 
+    class="btn btn-contact" 
+    onclick="window.open('https://github.com/likhil1234', '_blank')">
+    Github
+    </button>
+
+      
+
+    <button style="border: 4px solid rgb(6, 8, 11);" class="btn btn-contact" onclick="window.open('https://x.com/LikhilSai1', '_blank')">
+      Twitter
+    </button>
+
+        </div>
+      </div>
+    </div>
+
+
+  </nav>
+  <div id="color-mode" style="background-color: rgb(93, 93, 93);">
+    <div id="toggle-button" class="icon" style="background-color: white; border-radius: 50px;">
+    </div>
+  </div>
+<footer>
+    <p>© 2025 Likhil Venkata Naga Sri Sai Vimal Tadinada. All rights reserved.</p>
+  </footer>
+<script>
+  window.onload = function() {
+    setTimeout(() => {
+        document.getElementById("loader-overlay").style.display = "none";
+    }, 1000); // Delay to show loader
+  };
+
+  // Integrated script from index2.html
+  const logoAnchor = document.getElementById("logoAnchor");
+  const animationContainer = document.getElementById("animationContainer");
+  const animVideo = document.getElementById("animVideo");
+
+  logoAnchor.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    // Allow target page to open
+    sessionStorage.setItem("allowed_from_logo", Date.now().toString());
+
+    // Hide logo, show animation
+    logoAnchor.style.display = "none";
+    animationContainer.style.display = "block";
+
+    // Redirect after video ends
+    animVideo.onended = () => {
+      window.location.href = "edits.html"; // Replace with your actual target
+    };
+  });
+</script>
+</body>
+</html>
